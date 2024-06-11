@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="homepage-style.css">
+    <style>
+        /* Add your CSS styles for the widgets here */
+        .widget-container {
+            display: flex;
+            justify-content: space-between; /* Adjust as needed */
+            flex-wrap: wrap; /* Allow widgets to wrap to the next line if needed */
+        }
+        .widget {
+            flex: 1; /* Each widget takes up equal space */
+            padding: 10px;
+            width: 10px;
+            height: 100px;
+            background-color: #9c5454;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box; /* Include padding and border in the width calculation */
+        }
+    </style>
+</head>
+
+<body>
+<nav class="navbar">
+    <a href="#" class="logo">VRK Towers</a>
+    <div class="nav-links">
+        <a href="logout.php" class="fas fa-sign-out-alt">Logout</a>
+    </div>
+</nav>
+
+<div class="sidebar">
+    <ul>
+        <li><a href="visitor-form.php"><i class="fas fa-user-plus"></i> Visitor Form</a></li>
+        <li><a href="get_owner_details.php">Resident Details</a></li>
+        <li><a href="visitors.php">Visitor Details</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="header">
+        <h1>Welcome to your Dashboard</h1>
+    </div>
+    <div class="side">
+        <div class="main-content">
+            <div class="widget-container">
+                <div class="widget" id="dailyVisitorsWidget">
+                    <h3>Daily Visitors</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="widget" id="weeklyVisitorsWidget">
+                    <h3>Weekly Visitors</h3>
+                    <p>Loading...</p>
+                </div>
+            </div>
+            <br><br><br>
+            <h2>🌟 Welcome to VRK Towers, Prasadampadu, Vijayawada! 🌟</h2>
+
+            We kindly ask all visitors to complete our visitor form before entering the apartment. Your cooperation ensures a safe and enjoyable experience for everyone.
+            <br><br><br>
+            Thank you for helping us maintain a secure environment.
+            <br><br><br>
+            Have a fantastic day!
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+</div>
+
+<script>
+    // JavaScript code to fetch and update the visitor count for today and this week
+    // You need to replace the URLs with the actual endpoints on your server
+
+    // Fetch daily visitor count
+    fetch('daily_visitor_count_endpoint.php')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('dailyVisitorsWidget').innerHTML = `
+                <h3>Daily Visitors</h3>
+                <p>${data.count}</p>
+            `;
+        });
+
+    // Fetch weekly visitor count
+    fetch('weekly_visitor_count_endpoint.php')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('weeklyVisitorsWidget').innerHTML = `
+                <h3>Weekly Visitors</h3>
+                <p>${data.count}</p>
+            `;
+        });
+</script>
+
+</body>
+</html>
