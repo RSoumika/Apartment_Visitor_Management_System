@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 -- Default data for table 'admin'
 INSERT INTO `admin` (`ID`, `AdminName`, `username`, `MobileNumber`, `Email`, `password`, `authority`)
-VALUES (1, 'yashu', 'yashu', 8555065338, 'admin@gmail.com', 'yashu21', 'president');
+VALUES (1, 'admin', 'admin', 123456789, 'admin@gmail.com', 'Test@123', 'president');
 
 -- Table structure for table 'visitor'
 CREATE TABLE IF NOT EXISTS `visitor` (
@@ -52,18 +52,18 @@ CREATE TABLE IF NOT EXISTS `residents` (
 
 -- Insert sample data into the residents table
 INSERT INTO `residents` (`ResidentName`, `MobileNumber`, `ApartmentNumber`) VALUES
-('Gopi', 9951580058, 'S1'),
-('Kranthi', 9703272525, 'S2'),
-('Kumar Vel', 9948543699, 'S4'),
-('Mounika', 9912133935, 'T2'),
-('Raghu Pramodh', 8106000122, 'F4'),
-('N V V Prasad Babu', 8106000122, 'F2'),
-('Nani ', 9550563935, 'F3'),
+('Gopi', 8894763544, 'S1'),
+('Kranthi', 9384725610, 'S2'),
+('Kumar Vel', 8562093745, 'S4'),
+('Mounika', 6927384051, 'T2'),
+('Raghu Pramodh', 5629347081, 'F4'),
+('Prasad Babu', 7483920651, 'F2'),
+('Nani ', 9038462751, 'F3'),
 ('Ranga Rao ', 9666182208, 'T4'),
-('Phani Valluru', 9502723999, 'F1'),
-('Sandeep asileti', 9491951194, 'G1'),
-('Sireesha', 9492947795, 'T1'),
-('Ratna kumari', 8309757698, 'G2'),
-('Kanaka Rao', 9391457919, 'T3');
+('Phani', 6129483750, 'F1'),
+('Sandeep', 4728391056, 'G1'),
+('Sireesha', 7283945160, 'T1'),
+('Ratna kumari', 3850294617, 'G2'),
+('Kanaka Rao', 6495738201, 'T3');
 
 
